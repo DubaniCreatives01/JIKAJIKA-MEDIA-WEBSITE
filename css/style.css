@@ -30,7 +30,7 @@
   --bg-surface: #121F35;
   --bg-card: #0F1A2E;
   --bg-card-hover: #16243D;
-  --bg-floating-nav: rgba(11, 20, 36, 0.48);
+  --bg-floating-nav: rgba(11, 20, 36, 0.30);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-glow: rgba(255, 255, 255, 0.15);
 
@@ -61,7 +61,7 @@
   --bg-surface: #E2E8F0;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
-  --bg-floating-nav: rgba(255, 255, 255, 0.48);
+  --bg-floating-nav: rgba(255, 255, 255, 0.30);
   --border-subtle: rgba(0, 0, 0, 0.1);
   --border-glow: rgba(0, 0, 0, 0.12);
 
