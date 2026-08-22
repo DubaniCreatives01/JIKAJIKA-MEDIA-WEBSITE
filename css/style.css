@@ -298,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 .floating-nav-frame {
   width: 100%;
   max-width: 1360px;
-  background-color: transparent; /* 100% TRANSPARENT BACKGROUND */
+  background-color: #0B1424; /* 0% TRANSPARENCY - FULLY SOLID BACKGROUND */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: none;
@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .floating-nav-frame {
-  background-color: transparent;
+  background-color: #FFFFFF; /* SOLID WHITE */
   backdrop-filter: none;
   border: none;
   box-shadow: none;
