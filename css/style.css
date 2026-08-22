@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--bg-floating-nav);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1.5px solid #38BDF8; /* CRISP LIGHT BLUE OUTER LINE WITHOUT GLOW */
+  border: 1.5px solid #FFFFFF; /* PURE WHITE OUTER LINE */
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-nav);
   padding: 13px 28px;
@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .floating-nav-frame {
-  border: 1.5px solid #0284C7;
+  border: 1.5px solid #CBD5E1;
   box-shadow: var(--shadow-nav);
 }
 
