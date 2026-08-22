@@ -298,12 +298,12 @@ h1, h2, h3, h4, h5, h6 {
 .floating-nav-frame {
   width: 100%;
   max-width: 1360px;
-  background-color: var(--bg-floating-nav);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: none; /* OUTLINE REMOVED */
-  border-radius: 10px; /* 10PX CURVED CORNERS - NOT ROUND */
-  box-shadow: var(--shadow-nav);
+  background-color: transparent; /* 100% TRANSPARENT BACKGROUND */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none; /* NO OUTER SHADOW */
   padding: 13px 28px;
   display: flex;
   align-items: center;
@@ -314,8 +314,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .floating-nav-frame {
+  background-color: transparent;
+  backdrop-filter: none;
   border: none;
-  box-shadow: var(--shadow-nav);
+  box-shadow: none;
 }
 
 .brand-logo {
