@@ -301,16 +301,21 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--bg-floating-nav);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid #38BDF8; /* LIGHT BLUE OUTER LINE FROM LOGO */
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-nav);
-  padding: 13px 28px; /* INCREASED BACKGROUND PADDING / SIZE */
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.15), var(--shadow-nav);
+  padding: 13px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   pointer-events: auto;
   transition: all var(--transition-normal);
+}
+
+[data-theme="light"] .floating-nav-frame {
+  border: 1.5px solid #0284C7;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.12), var(--shadow-nav);
 }
 
 .brand-logo {
