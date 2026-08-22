@@ -269,9 +269,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-sm {
-  padding: 8px 18px;
+  padding: 9px 20px;
   font-size: 0.85rem;
-  border-radius: var(--radius-full);
+  border-radius: 10px; /* 10PX CURVED CORNERS */
 }
 
 .btn-lg {
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: none; /* OUTLINE REMOVED */
-  border-radius: var(--radius-full);
+  border-radius: 10px; /* 10PX CURVED CORNERS - NOT ROUND */
   box-shadow: var(--shadow-nav);
   padding: 13px 28px;
   display: flex;
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.925rem;
   font-weight: 500;
   color: var(--text-secondary);
-  border-radius: var(--radius-full);
+  border-radius: 8px; /* CLEAN SUBTLE CORNERS */
   transition: var(--transition-fast);
 }
 
