@@ -1,0 +1,6 @@
+# Temporary & extraction files
+extracted_site.html
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
