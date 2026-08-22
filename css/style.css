@@ -30,7 +30,7 @@
   --bg-surface: #121F35;
   --bg-card: #0F1A2E;
   --bg-card-hover: #16243D;
-  --bg-floating-nav: rgba(11, 20, 36, 0.94);
+  --bg-floating-nav: rgba(11, 20, 36, 0.48);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-glow: rgba(255, 255, 255, 0.15);
 
@@ -61,7 +61,7 @@
   --bg-surface: #E2E8F0;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
-  --bg-floating-nav: rgba(255, 255, 255, 0.94);
+  --bg-floating-nav: rgba(255, 255, 255, 0.48);
   --border-subtle: rgba(0, 0, 0, 0.1);
   --border-glow: rgba(0, 0, 0, 0.12);
 
@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--bg-floating-nav);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1.5px solid #FFFFFF; /* PURE WHITE OUTER LINE */
+  border: none; /* OUTLINE REMOVED */
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-nav);
   padding: 13px 28px;
@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="light"] .floating-nav-frame {
-  border: 1.5px solid #CBD5E1;
+  border: none;
   box-shadow: var(--shadow-nav);
 }
 
