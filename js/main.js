@@ -1,19 +1,40 @@
 /* ==========================================================================
    JIKAJIKA MEDIA (PTY) LTD - MAIN JAVASCRIPT LOGIC
+   Features: Theme Switch (Light/Dark), Sticky Nav, Scroll Reveal, Stats, Forms
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Sticky Glass Navbar on Scroll
-  const siteHeader = document.querySelector('.site-header');
-  const updateHeaderScroll = () => {
-    if (window.scrollY > 40) {
-      siteHeader?.classList.add('scrolled');
+  // 1. Light / Dark Mode Toggle Controller
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const darkIconSlot = document.getElementById('darkIconSlot');
+  const lightIconSlot = document.getElementById('lightIconSlot');
+  const rootElement = document.documentElement;
+
+  // Retrieve saved theme or default to dark
+  const savedTheme = localStorage.getItem('jikajika-theme') || 'dark';
+  setTheme(savedTheme);
+
+  function setTheme(theme) {
+    if (theme === 'light') {
+      rootElement.setAttribute('data-theme', 'light');
+      lightIconSlot?.classList.add('active');
+      darkIconSlot?.classList.remove('active');
+      localStorage.setItem('jikajika-theme', 'light');
     } else {
-      siteHeader?.classList.remove('scrolled');
+      rootElement.removeAttribute('data-theme');
+      darkIconSlot?.classList.add('active');
+      lightIconSlot?.classList.remove('active');
+      localStorage.setItem('jikajika-theme', 'dark');
     }
-  };
-  window.addEventListener('scroll', updateHeaderScroll, { passive: true });
-  updateHeaderScroll();
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = rootElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
+  }
 
   // 2. Mobile Menu Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
@@ -57,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback for older browsers
     revealElements.forEach(el => el.classList.add('active'));
   }
 
@@ -70,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = +counter.getAttribute('data-target');
       const prefix = counter.getAttribute('data-prefix') || '';
       const suffix = counter.getAttribute('data-suffix') || '';
-      const duration = 2000; // 2 seconds
+      const duration = 2000;
       const stepTime = 20;
       const totalSteps = duration / stepTime;
       const increment = target / totalSteps;
@@ -101,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     runCounterAnimation();
   }
 
-  // 5. Interactive Service Checkbox Cards in Quote Form
+  // 5. Interactive Service Checkbox Cards
   const serviceCheckboxes = document.querySelectorAll('.service-checkbox-card input[type="checkbox"]');
   serviceCheckboxes.forEach(cb => {
     cb.addEventListener('change', () => {
@@ -114,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Interactive Quote Request Form & WhatsApp Message Generator
+  // 6. Interactive Quote Request Form & WhatsApp Composer
   const quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
     quoteForm.addEventListener('submit', (e) => {
@@ -135,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const servicesText = selectedServices.length ? selectedServices.join(', ') : 'Custom Package';
 
-      // Build WhatsApp pre-filled text
       const waMessage = `*New Website Inquiry - Jikajika Media*%0A%0A` +
         `*Name:* ${encodeURIComponent(fullName)}%0A` +
         `*Company/Organization:* ${encodeURIComponent(company)}%0A` +
@@ -148,12 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `_Sent via Jikajika Media Official Website_`;
 
       const waUrl = `https://wa.me/27735660267?text=${waMessage}`;
-
-      // Open WhatsApp in new tab
       window.open(waUrl, '_blank');
-
-      // Feedback alert
-      alert('Thank you! Redirecting to WhatsApp to send your quote request directly to the Jikajika Media production team.');
+      alert('Thank you! Redirecting to WhatsApp to send your quote request directly to the Jikajika Media production desk.');
     });
   }
 
@@ -165,7 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          const headerHeight = siteHeader ? siteHeader.offsetHeight : 80;
+          const siteHeader = document.querySelector('.site-header');
+          const headerHeight = siteHeader ? siteHeader.offsetHeight + 40 : 100;
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
           window.scrollTo({
             top: targetPosition,
