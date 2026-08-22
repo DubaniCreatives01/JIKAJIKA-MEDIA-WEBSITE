@@ -497,22 +497,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.05);
 }
 
-/* Soft Center Overlay */
+/* One Uniform Flat Overlay Transparency (No Radial Vignette / No Faded Shadow) */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(6, 11, 20, 0.76) 0%,
-    rgba(6, 11, 20, 0.45) 60%,
-    rgba(6, 11, 20, 0.3) 100%
-  ),
-  linear-gradient(
-    0deg,
-    rgba(6, 11, 20, 0.8) 0%,
-    transparent 25%,
-    rgba(6, 11, 20, 0.3) 100%
-  );
+  background-color: rgba(0, 0, 0, 0.45); /* Uniform single transparency */
   z-index: 2;
 }
 
